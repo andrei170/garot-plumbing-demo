@@ -10,6 +10,8 @@
 <meta name="keywords" content="plumber Green Bay, plumbing De Pere, water heater Green Bay, drain cleaning, HVAC Green Bay, boiler repair, Brown County plumber">
 
 <link rel="canonical" href="https://www.garotplumbing.com/">
+<link rel="icon" type="image/png" href="photos/logo.png">
+<link rel="apple-touch-icon" href="photos/logo.png">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Garot Plumbing & Heating | Green Bay's Family-Owned Plumbers Since 1946">
@@ -76,6 +78,31 @@
     {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "16:00"}
   ],
   "paymentAccepted": ["Cash", "Check", "Visa", "MasterCard", "American Express", "Discover"],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.4",
+    "reviewCount": "27"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Evan S"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+      "reviewBody": "These guys are amazing. True craftsmen of their trade. Garot Plumbing has installed 2 different shower assemblies for me, and both times came out looking like it should be in a showroom."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Claire S"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+      "reviewBody": "We replaced a tub/shower unit with a walk-in shower and couldn't be happier with the whole process. Installer was very professional, friendly, came on time and cleaned everything upon completion."
+    },
+    {
+      "@type": "Review",
+      "author": {"@type": "Person", "name": "Daniel C"},
+      "reviewRating": {"@type": "Rating", "ratingValue": "5"},
+      "reviewBody": "Ryan did a great job installing a number of faucets and repairing one. He is highly professional and super knowledgeable, conscientious and courteous."
+    }
+  ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Plumbing & HVAC Services",
@@ -759,25 +786,62 @@ section {
   max-width: 580px;
 }
 
-/* AREA: typographic */
+/* AREA: map + typographic */
 #area { background: #fff; padding: 130px 0; }
 .area-grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 96px;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
   align-items: start;
+}
+.area-map-card {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 36px;
+  position: relative;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.area-map-card svg {
+  width: 100%;
+  height: auto;
+  max-width: 460px;
+}
+.area-map-legend {
+  position: absolute;
+  bottom: 24px;
+  left: 36px;
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.area-map-legend::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--blue);
 }
 .area-list-wrap {
   border-top: 1px solid var(--line);
-  padding-top: 36px;
-  columns: 3;
-  column-gap: 40px;
+  padding-top: 28px;
+  columns: 2;
+  column-gap: 32px;
   font-family: var(--display);
 }
 .area-list-wrap a {
   display: block;
-  padding: 11px 0;
-  font-size: 16px;
+  padding: 10px 0;
+  font-size: 15.5px;
   font-weight: 600;
   color: var(--ink);
   border-bottom: 1px solid var(--line);
@@ -1079,11 +1143,17 @@ footer {
   padding-bottom: 48px;
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
-.footer-logo img {
-  height: 64px;
-  width: auto;
+.footer-logo-wrap {
+  background: #fff;
+  display: inline-block;
+  padding: 14px 18px;
+  border-radius: 4px;
   margin-bottom: 18px;
-  filter: brightness(0) invert(1);
+}
+.footer-logo img {
+  height: 56px;
+  width: auto;
+  display: block;
 }
 .footer-tagline {
   font-size: 14.5px;
@@ -1222,7 +1292,7 @@ footer {
 <!-- HERO -->
 <section class="hero" id="top">
   <div class="hero-bg">
-    <img src="photos/hero.png" alt="Garot Plumbing technician working on a service call">
+    <img src="photos/hero.webp" alt="Garot Plumbing technician working on a service call" loading="eager" fetchpriority="high">
   </div>
   <div class="container hero-grid">
     <div class="fade-up">
@@ -1250,7 +1320,7 @@ footer {
     </div>
     <div class="fade-up">
       <div class="hero-photo-wrap">
-        <img src="photos/inspection.png" alt="A Garot plumber inspecting a residential plumbing system">
+        <img src="photos/inspection.webp" alt="A Garot plumber inspecting a residential plumbing system" loading="lazy">
         <div class="hero-tag-card">
           <svg class="hero-tag-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 4L20 12L28 14L22 20L23 28L16 24L9 28L10 20L4 14L12 12Z"/>
@@ -1332,9 +1402,9 @@ footer {
           </svg>
         </div>
         <h3 class="service-title">Water Heater &amp; Boiler Service</h3>
-        <p class="service-desc">40 and 50-gallon gas and electric water heaters stocked on every truck. Most replacements done same-day. Boiler installation, repair, and hydronic systems handled by technicians who have been working on Wisconsin boilers for an average of fourteen years.</p>
-        <a href="#contact" class="service-link">
-          Request a quote
+        <p class="service-desc">40 and 50-gallon gas and electric water heaters stocked on every truck. Most replacements done same-day. Boiler installation, repair, and hydronic systems handled by technicians who have been working on Wisconsin boilers for years.</p>
+        <a href="services/water-heater-replacement-green-bay/" class="service-link">
+          See water heater service
           <svg viewBox="0 0 16 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M1 6H15M11 1L15 6L11 11"/></svg>
         </a>
       </div>
@@ -1448,9 +1518,9 @@ footer {
         <div class="section-eyebrow">The Garot Family</div>
         <h2>Eighty years. <em>Three generations.</em> One Green Bay phone book.</h2>
         <p>Edwin C. Garot opened the doors in 1946 with one truck and a Green Bay route he hand-drew on a paper map. That route is still the backbone of where we work today.</p>
-        <div class="about-pullquote">"Most companies in this market have been bought, rolled up, or sold to private equity. Garot has not, will not, and has been asked plenty of times."</div>
-        <p>Three generations later, the company stays family-owned. The phone gets answered. The trucks have the parts. The technicians have an average of fourteen years on the job. And when the call comes in early on a Tuesday morning, somebody who shares the Garot last name picks up.</p>
-        <p>We answer to the families in Brown County. Not to a board.</p>
+        <div class="about-pullquote">"True craftsmen of their trade. Both showers came out looking like a showroom."<span style="display: block; font-family: var(--sans); font-style: normal; font-size: 13px; color: var(--ink-quiet); margin-top: 12px; letter-spacing: 0;">- Evan S., verified customer review</span></div>
+        <p>Three generations later, the company stays family-owned. The phone gets answered. Ryan and the team have the parts on the truck. And when the call comes in early on a Tuesday morning, somebody who shares the Garot name picks up.</p>
+        <p><strong>Most companies in this market have been bought, rolled up, or sold to private equity. Garot has not.</strong> We answer to the families in Brown County, not to a board.</p>
         <div class="about-signature-row">
           <div class="signature-mark">EG</div>
           <div>
@@ -1495,11 +1565,55 @@ footer {
   <div class="container">
     <div class="area-grid">
       <div class="fade-up">
-        <div class="section-eyebrow">Where We Work</div>
-        <h2 class="section-title" style="font-size: clamp(30px, 3.6vw, 44px);">Brown County and the <em>seventeen communities</em> that make it home.</h2>
-        <p style="font-size: 17px; color: var(--ink-soft); margin-top: 24px;">If your address is on this list, we cover you. If your community is just outside it, call and ask. We have answered yes more often than no for eighty years.</p>
+        <div class="area-map-card">
+          <svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" aria-label="Brown County service area map showing 17 cities Garot Plumbing serves">
+            <!-- Brown County abstract outline -->
+            <path d="M 90 90 L 320 80 L 380 110 L 400 200 L 390 320 L 360 390 L 270 410 L 150 400 L 80 360 L 60 240 Z" fill="#FFFFFF" stroke="#1F4FA8" stroke-width="2" stroke-linejoin="round" opacity="0.85"/>
+            <!-- "Bay of Green Bay" water hint at top-left -->
+            <path d="M 60 240 L 80 360 L 60 400 L 30 380 L 25 280 Z" fill="#E8F0F8" stroke="#C5D4E5" stroke-width="1"/>
+            <text x="38" y="335" fill="#7A8392" font-family="Plus Jakarta Sans" font-size="9" font-weight="500" letter-spacing="0.08em" text-anchor="middle" transform="rotate(-78 38 335)">BAY OF GREEN BAY</text>
+
+            <!-- 17 city markers, geographically approximate -->
+            <!-- Northern -->
+            <g class="area-pin"><circle cx="170" cy="120" r="5" fill="#1F4FA8"/><text x="178" y="124" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Abrams</text></g>
+            <g class="area-pin"><circle cx="280" cy="115" r="5" fill="#1F4FA8"/><text x="288" y="119" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Krakow</text></g>
+            <g class="area-pin"><circle cx="120" cy="170" r="5" fill="#1F4FA8"/><text x="128" y="174" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Little Suamico</text></g>
+            <g class="area-pin"><circle cx="240" cy="155" r="5" fill="#1F4FA8"/><text x="248" y="159" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Pulaski</text></g>
+            <g class="area-pin"><circle cx="345" cy="155" r="5" fill="#1F4FA8"/><text x="353" y="159" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Seymour</text></g>
+
+            <!-- Mid-North -->
+            <g class="area-pin"><circle cx="150" cy="210" r="5" fill="#1F4FA8"/><text x="158" y="214" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Suamico</text></g>
+            <g class="area-pin"><circle cx="225" cy="200" r="5" fill="#1F4FA8"/><text x="233" y="204" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Howard</text></g>
+            <g class="area-pin"><circle cx="305" cy="205" r="5" fill="#1F4FA8"/><text x="313" y="209" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Mill Center</text></g>
+            <g class="area-pin"><circle cx="370" cy="220" r="5" fill="#1F4FA8"/><text x="320" y="234" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">New Franken</text></g>
+
+            <!-- GREEN BAY (HQ) -->
+            <g class="area-pin">
+              <circle cx="195" cy="260" r="13" fill="#2A9DA0" opacity="0.18"/>
+              <circle cx="195" cy="260" r="7" fill="#2A9DA0"/>
+              <circle cx="195" cy="260" r="3.5" fill="#fff"/>
+              <text x="207" y="258" fill="#0A0E14" font-family="Plus Jakarta Sans" font-size="13" font-weight="800" letter-spacing="-0.01em">GREEN BAY</text>
+              <text x="207" y="270" fill="#7A8392" font-family="Plus Jakarta Sans" font-size="10" font-weight="600">1276 Velp Ave · HQ</text>
+            </g>
+
+            <!-- Mid-South -->
+            <g class="area-pin"><circle cx="160" cy="295" r="5" fill="#1F4FA8"/><text x="100" y="299" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Ashwaubenon</text></g>
+            <g class="area-pin"><circle cx="220" cy="305" r="5" fill="#1F4FA8"/><text x="228" y="309" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Allouez</text></g>
+            <g class="area-pin"><circle cx="295" cy="290" r="5" fill="#1F4FA8"/><text x="303" y="294" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Bellevue</text></g>
+            <g class="area-pin"><circle cx="350" cy="280" r="5" fill="#1F4FA8"/><text x="328" y="298" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Luxemburg</text></g>
+
+            <!-- Southern -->
+            <g class="area-pin"><circle cx="180" cy="345" r="5" fill="#1F4FA8"/><text x="125" y="349" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">De Pere</text></g>
+            <g class="area-pin"><circle cx="280" cy="355" r="5" fill="#1F4FA8"/><text x="288" y="359" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Oneida</text></g>
+            <g class="area-pin"><circle cx="220" cy="385" r="5" fill="#1F4FA8"/><text x="228" y="389" fill="#15191F" font-family="Plus Jakarta Sans" font-size="11" font-weight="600">Denmark</text></g>
+          </svg>
+          <div class="area-map-legend">17 communities served</div>
+        </div>
       </div>
       <div class="fade-up">
+        <div class="section-eyebrow">Where We Work</div>
+        <h2 class="section-title" style="font-size: clamp(30px, 3.6vw, 44px);">Brown County and the <em>seventeen communities</em> that make it home.</h2>
+        <p style="font-size: 17px; color: var(--ink-soft); margin-top: 18px; margin-bottom: 32px;">If your address is on this list, we cover you. If your community is just outside it, call and ask. The answer has been yes more often than no for eighty years.</p>
         <div class="area-list-wrap">
           <a href="#contact">Green Bay</a>
           <a href="#contact">De Pere</a>
@@ -1534,38 +1648,41 @@ footer {
     <div class="reviews-grid">
       <div class="review-card fade-up">
         <div class="review-mark">&ldquo;</div>
-        <p class="review-quote">Water heater quit on a Saturday morning. Called Garot at nine. Technician was at the house by eleven, brand new heater installed and hot water back by two. Same day. Same price they quoted on the phone. This is why my parents used them and why we still do.</p>
+        <p class="review-quote">These guys are amazing. True craftsmen of their trade. Garot Plumbing has installed 2 different shower assemblies for me, and both times came out looking like it should be in a showroom. Fit and finish were awesome, mechanicals in wall were installed very clean looking.</p>
         <div class="review-author">
-          <div class="review-avatar">JM</div>
+          <div class="review-avatar">ES</div>
           <div>
-            <div class="review-name">J. Mertens</div>
-            <div class="review-where">Allouez, WI</div>
+            <div class="review-name">Evan S.</div>
+            <div class="review-where">Verified customer review</div>
           </div>
         </div>
       </div>
       <div class="review-card fade-up">
         <div class="review-mark">&ldquo;</div>
-        <p class="review-quote">Three companies looked at the basement plumbing. Two told us we needed a full re-pipe at twenty-some thousand. Garot found a cracked fitting, charged us a couple hundred, and saved us from being upsold. They have my business for life.</p>
+        <p class="review-quote">We replaced a tub/shower unit with a walk-in shower and couldn't be happier with the whole process. Installer was very professional, friendly, and he answered all our questions, came on time and cleaned everything upon completion. Would definitely use them for any plumbing issue.</p>
         <div class="review-author">
-          <div class="review-avatar">SH</div>
+          <div class="review-avatar">CS</div>
           <div>
-            <div class="review-name">S. Holzer</div>
-            <div class="review-where">De Pere, WI</div>
+            <div class="review-name">Claire S.</div>
+            <div class="review-where">Verified customer review</div>
           </div>
         </div>
       </div>
       <div class="review-card fade-up">
         <div class="review-mark">&ldquo;</div>
-        <p class="review-quote">Boiler died in January. Below zero outside. Garot had a tech at the house in ninety minutes, diagnosed it, and had heat back on the same evening with a temporary fix while the new boiler was ordered. They cared about the kids being warm. Real people.</p>
+        <p class="review-quote">Ryan did a great job installing a number of faucets and repairing one after we had all the countertops replaced. He also helped repair a shower drain that was leaking and previously installed a water heater. He is highly professional, super knowledgeable, conscientious and courteous.</p>
         <div class="review-author">
-          <div class="review-avatar">RW</div>
+          <div class="review-avatar">DC</div>
           <div>
-            <div class="review-name">R. Wendt</div>
-            <div class="review-where">Howard, WI</div>
+            <div class="review-name">Daniel C.</div>
+            <div class="review-where">Verified customer review</div>
           </div>
         </div>
       </div>
     </div>
+    <p style="text-align: center; margin-top: 48px; font-family: var(--display); font-size: 14px; color: var(--ink-soft); letter-spacing: 0.04em;">
+      <span style="color: var(--blue); font-weight: 700;">4.4 out of 5</span> across <strong>27 verified reviews.</strong> Read all of them at garotplumbing.com/reviews.
+    </p>
   </div>
 </section>
 
@@ -1611,7 +1728,7 @@ footer {
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-bg-img">
-    <img src="photos/inspection.png" alt="">
+    <img src="photos/inspection.webp" alt="" loading="lazy">
   </div>
   <div class="container">
     <div class="contact-grid">
@@ -1659,6 +1776,18 @@ footer {
             <div class="contact-method-value">1276 Velp Avenue, Green Bay, WI 54303</div>
             <div class="contact-method-extra">By appointment, technician dispatch only</div>
           </div>
+        </div>
+
+        <div style="margin-top: 32px; border-radius: 6px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.4);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2867.0!2d-88.0395!3d44.5283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDMxJzQxLjkiTiA4OMKwMDInMjIuMiJX!5e0!3m2!1sen!2sus!4v1715170000000!5m2!1sen!2sus&q=1276+Velp+Ave,+Green+Bay,+WI+54303"
+            width="100%"
+            height="240"
+            style="border:0; display: block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Garot Plumbing & Heating, 1276 Velp Avenue, Green Bay, WI 54303 location map"></iframe>
         </div>
       </div>
 
@@ -1730,7 +1859,9 @@ footer {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col footer-logo">
-        <img src="photos/logo.png" alt="Edwin C. Garot Plumbing &amp; Heating">
+        <div class="footer-logo-wrap">
+          <img src="photos/logo.webp" alt="Edwin C. Garot Plumbing &amp; Heating">
+        </div>
         <div class="footer-tagline">Family-owned plumbing &amp; HVAC in Green Bay, WI since 1946. Three generations. One promise: real people, real answers, real fast.</div>
         <div class="footer-payments">
           <span class="footer-payment">Visa</span>
