@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garot Plumbing &amp; Heating &middot; Before vs After &middot; AG1 Consulting</title>
+<meta name="description" content="The 80-year Green Bay plumber whose own website is sending its biggest leads to a placeholder email. Audit, comparison, and 60-day plan to fix it.">
+<meta property="og:title" content="Garot Plumbing &middot; Before vs After">
+<meta property="og:description" content="80 years of trust. A primary CTA wired to mymail@mailservice.com. Here is what we'd fix in 60 days.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #1F4FA8;
+  --blue-deep: #15397A;
+  --blue-bright: #2A65C8;
+  --teal: #2A9DA0;
+  --teal-deep: #1F8085;
+  --black: #0A0E14;
+  --ink: #15191F;
+  --ink-soft: #4A5460;
+  --ink-quiet: #7A8392;
+  --line: #E8EBEF;
+  --line-soft: #F1F3F6;
+  --bg: #FFFFFF;
+  --cream: #FAF8F4;
+  --cream-deep: #F2EEE5;
+  --red: #B5402F;
+  --green: #2E8557;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Inter', system-ui, sans-serif;
+  --display: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--blue); text-decoration: none; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+/* Top bar */
+.topbar { background: var(--black); color: rgba(255,255,255,0.9); padding: 10px 0; font-size: 13px; }
+.topbar-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.topbar-tag { color: var(--teal); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 11px; }
+
+.hero { padding: 100px 0 80px; background: var(--cream); position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: 5%; right: -10%; width: 700px; height: 700px; background: radial-gradient(circle, rgba(31, 79, 168, 0.06), transparent 65%); filter: blur(60px); pointer-events: none; }
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 32px; position: relative; z-index: 2; max-width: 980px; margin: 0 auto; }
+.eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue); font-weight: 700; margin-bottom: 24px; display: block; }
+.hero h1 { font-family: var(--serif); font-weight: 600; font-size: clamp(44px, 6.5vw, 88px); line-height: 1; letter-spacing: -0.025em; margin-bottom: 32px; color: var(--black); }
+.hero h1 em { font-style: italic; color: var(--blue); }
+.hero p { color: var(--ink-soft); font-size: 19px; max-width: 720px; line-height: 1.55; }
+
+.section { padding: 80px 0; position: relative; }
+.section.alt { background: var(--cream); }
+.section-title { font-family: var(--serif); font-weight: 600; font-size: clamp(32px, 4vw, 56px); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 16px; color: var(--black); }
+.section-title em { font-style: italic; color: var(--blue); }
+.section-sub { color: var(--ink-soft); font-size: 17px; margin-bottom: 56px; max-width: 720px; line-height: 1.6; }
+
+/* Compare cards */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.compare-card { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--bg); transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.compare-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(31, 79, 168, 0.12); }
+.compare-label { padding: 16px 24px; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; }
+.compare-label.current { background: rgba(181, 64, 47, 0.08); color: var(--red); border-bottom: 1px solid rgba(181, 64, 47, 0.18); }
+.compare-label.new { background: rgba(31, 79, 168, 0.08); color: var(--blue); border-bottom: 1px solid rgba(31, 79, 168, 0.18); }
+.compare-preview { aspect-ratio: 16/10; background: var(--cream-deep); position: relative; overflow: hidden; }
+.compare-preview-fallback { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 16px; padding: 32px; text-align: center; background-size: cover; background-position: center; }
+.compare-preview-fallback::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,14,20,0.35), rgba(10,14,20,0.78)); }
+.compare-preview-fallback > * { position: relative; z-index: 2; color: #fff; }
+.compare-preview-fallback h3 { font-family: var(--serif); font-size: 32px; font-weight: 600; letter-spacing: -0.01em; }
+.compare-body { padding: 28px 32px; }
+.compare-body h4 { font-family: var(--serif); font-size: 24px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; color: var(--black); }
+.compare-body p { color: var(--ink-soft); font-size: 14px; margin-bottom: 20px; }
+.compare-body ul { list-style: none; margin-bottom: 24px; }
+.compare-body li { padding: 6px 0; font-size: 14px; color: var(--ink-soft); display: flex; align-items: flex-start; gap: 10px; }
+.compare-body li::before { font-size: 12px; margin-top: 2px; flex-shrink: 0; font-weight: 700; }
+.current li::before { content: '\2717'; color: var(--red); }
+.new li::before { content: '\2713'; color: var(--green); }
+.compare-cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.25s; }
+.cta-current { border: 1px solid rgba(181, 64, 47, 0.4); color: var(--red); }
+.cta-current:hover { background: rgba(181, 64, 47, 0.06); }
+.cta-new { background: var(--blue); color: #fff; }
+.cta-new:hover { background: var(--blue-deep); }
+
+/* Bombshell */
+.bombshell-section { background: var(--black); color: #fff; }
+.bombshell-section .section-title { color: #fff; }
+.bombshell-grid { display: grid; grid-template-columns: 1.1fr 1.4fr; gap: 64px; align-items: center; }
+.bombshell-stat { font-family: var(--serif); font-size: clamp(64px, 8vw, 120px); font-weight: 600; line-height: 1.05; color: var(--teal); letter-spacing: -0.025em; word-break: break-word; }
+.bombshell-stat-codeline { font-family: 'Courier New', monospace; font-size: clamp(18px, 2.2vw, 28px); color: var(--teal); background: rgba(42, 157, 160, 0.1); padding: 14px 22px; border-radius: 4px; border-left: 3px solid var(--teal); display: inline-block; margin-top: 24px; }
+.bombshell-stat-label { font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 18px; }
+.bombshell-content h2 { font-family: var(--serif); font-size: clamp(32px, 4vw, 56px); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 24px; color: #fff; }
+.bombshell-content h2 em { font-style: italic; color: var(--teal); }
+.bombshell-content p { color: rgba(255,255,255,0.78); font-size: 17px; line-height: 1.7; margin-bottom: 16px; }
+.bombshell-content p strong { color: #fff; font-weight: 600; }
+
+/* Heritage section */
+.heritage-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 40px; }
+.heritage-card { padding: 28px 20px; background: var(--cream-deep); border: 1px solid var(--line); border-radius: 6px; text-align: center; transition: all 0.3s; }
+.heritage-card.you { background: var(--blue); color: #fff; border-color: var(--blue); }
+.heritage-card .year { font-family: var(--serif); font-size: 36px; font-weight: 600; line-height: 1; letter-spacing: -0.02em; margin-bottom: 12px; color: var(--black); }
+.heritage-card.you .year { color: #fff; }
+.heritage-card .name { font-size: 14px; font-weight: 600; color: var(--ink-soft); }
+.heritage-card.you .name { color: rgba(255,255,255,0.95); }
+.heritage-card .rank { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-quiet); margin-top: 8px; }
+.heritage-card.you .rank { color: rgba(255,255,255,0.7); }
+
+/* Plan summary */
+.plan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+.plan-card { padding: 36px 32px; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; transition: all 0.3s; position: relative; }
+.plan-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 12px 32px rgba(31, 79, 168, 0.08); }
+.plan-num { font-family: var(--serif); font-size: 13px; font-style: italic; color: var(--teal); font-weight: 600; margin-bottom: 16px; display: block; letter-spacing: 0.05em; }
+.plan-card h4 { font-family: var(--serif); font-size: 26px; font-weight: 600; line-height: 1.15; margin-bottom: 12px; letter-spacing: -0.01em; color: var(--black); }
+.plan-card p { color: var(--ink-soft); font-size: 14px; line-height: 1.6; }
+.plan-week { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue); font-weight: 700; margin-top: 16px; display: inline-block; }
+
+/* Scorecard */
+.scorecard { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--bg); }
+.scorecard-header { display: grid; grid-template-columns: 2fr 1fr 1fr; padding: 24px 32px; background: var(--cream-deep); border-bottom: 1px solid var(--line); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; color: var(--ink-soft); }
+.scorecard-row { display: grid; grid-template-columns: 2fr 1fr 1fr; padding: 18px 32px; border-bottom: 1px solid var(--line); align-items: center; }
+.scorecard-row:last-child { border-bottom: none; }
+.scorecard-row:hover { background: var(--cream); }
+.scorecard-label { font-size: 15px; color: var(--black); }
+.scorecard-cell { font-size: 14px; }
+.scorecard-cell.current { color: var(--red); }
+.scorecard-cell.new { color: var(--green); font-weight: 600; }
+
+.cta-section { padding: 120px 0; text-align: center; background: var(--cream); }
+.cta-section h2 { font-family: var(--serif); font-size: clamp(36px, 5vw, 64px); font-weight: 600; letter-spacing: -0.025em; margin-bottom: 24px; line-height: 1.05; color: var(--black); }
+.cta-section h2 em { font-style: italic; color: var(--blue); }
+.cta-section p { color: var(--ink-soft); font-size: 17px; margin-bottom: 40px; max-width: 580px; margin-left: auto; margin-right: auto; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.cta-button { display: inline-flex; align-items: center; gap: 8px; padding: 18px 36px; border-radius: 4px; font-size: 14px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; transition: all 0.25s; }
+.cta-button.primary { background: var(--blue); color: #fff; }
+.cta-button.primary:hover { background: var(--blue-deep); transform: translateY(-2px); }
+.cta-button.ghost { border: 1px solid var(--line); color: var(--ink); background: var(--bg); }
+.cta-button.ghost:hover { border-color: var(--blue); color: var(--blue); }
+
+footer { padding: 32px 0; border-top: 1px solid var(--line); text-align: center; font-size: 12px; color: var(--ink-quiet); background: var(--cream); }
+footer a { color: var(--blue); }
+
+@media (max-width: 1024px) {
+  .compare-grid, .heritage-grid { grid-template-columns: 1fr; }
+  .heritage-grid { grid-template-columns: repeat(2, 1fr); }
+  .bombshell-grid { grid-template-columns: 1fr; gap: 32px; }
+  .plan-grid { grid-template-columns: 1fr; }
+  .scorecard-header, .scorecard-row { padding: 14px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span class="topbar-tag">Search Audit Report &middot; Prepared by AG1 Consulting</span>
+    <span>For Garot Plumbing &amp; Heating</span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Prepared for Garot Plumbing &amp; Heating &middot; AG1 Consulting</span>
+        <h1>80 years of trust.<br>One <em>broken</em> button<br>quietly losing it.</h1>
+        <p>Garot Plumbing &amp; Heating has been Green Bay's family-owned plumber since 1946. Older than four of the five top-ranked plumbers in the city. The website's primary call-to-action is wired to a placeholder email. Here is what we'd fix in 60 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Garot's website: <em>before vs after</em></h2>
+    <p class="section-sub">Same family. Same 1946 history. Same Brown County trade reputation. Two very different chances of being found by the homeowner whose water heater just died on a Sunday morning.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-label current">Today &middot; Live Site</div>
+        <div class="compare-preview">
+          <div class="compare-preview-fallback" style="background: linear-gradient(135deg, rgba(10,14,20,0.55), rgba(10,14,20,0.92)), url('../photos/facility.webp') center/cover; filter: saturate(0.6);">
+            <h3>garotplumbing.com</h3>
+            <p style="color: rgba(255,255,255,0.8); font-size: 14px;">Currently live &middot; Click to view</p>
+          </div>
+        </div>
+        <div class="compare-body current">
+          <h4>What's there now</h4>
+          <p>The current site has 80 years of brand equity behind it but the search and conversion infrastructure is throwing leads on the floor every day.</p>
+          <ul>
+            <li>Primary "Book a service" CTA wired to <code style="font-family: monospace; font-size: 12px; background: rgba(181,64,47,0.08); padding: 2px 6px; border-radius: 3px; color: var(--red);">mailto:mymail@mailservice.com</code></li>
+            <li>Three different founding-year claims on the homepage (1946, "70 years", "78 years")</li>
+            <li>Hours and "open now" status not visible above the fold</li>
+            <li>Drain cleaning, sewer, sump pump pages indexed thinly compared to competitors</li>
+            <li>Not in the Google top 10 for "plumber Green Bay WI" despite the heritage</li>
+            <li>Newer competitors (Start 2 Finish, Greenbay Plumbing Co) winning the "near me" map pack</li>
+          </ul>
+          <a href="https://www.garotplumbing.com/" target="_blank" rel="noopener" class="compare-cta cta-current">View Live Site &rarr;</a>
+        </div>
+      </div>
+
+      <div class="compare-card">
+        <div class="compare-label new">Proposed &middot; A+ Rebuild</div>
+        <div class="compare-preview">
+          <div class="compare-preview-fallback" style="background: linear-gradient(135deg, rgba(31,79,168,0.55) 0%, rgba(10,14,20,0.55) 50%, rgba(10,14,20,0.92) 100%), url('../photos/hero.webp') center/cover;">
+            <h3>Garot, reimagined</h3>
+            <p style="color: rgba(255,255,255,0.85); font-size: 14px;">Click to explore the new design &rarr;</p>
+          </div>
+        </div>
+        <div class="compare-body new">
+          <h4>What we'd ship</h4>
+          <p>A premium navy-and-teal rebuild built for Google's local map pack, Wisconsin trade citation pickup, and a homepage that finally converts the calls 80 years of trust have earned.</p>
+          <ul>
+            <li>Working "Call Now" + "Book Service" CTAs above the fold (fixed in 24 hours)</li>
+            <li>Full Plumber + LocalBusiness + Service + FAQPage + AggregateRating schema</li>
+            <li>Single canonical "Established 1946" trust claim, embedded in schema</li>
+            <li>Service-deep landing pages for water heater, drain cleaning, boiler, sump pump, HVAC</li>
+            <li>Live "Open Now" status pulled from Google Business Profile</li>
+            <li>Wisconsin trade citation campaign: BBB A+, Angi, HomeAdvisor, Expertise.com, Yelp Top 10</li>
+            <li>Performance gate: top 10 for "plumber Green Bay" by day 60, or work continues at no additional cost</li>
+          </ul>
+          <a href="../" class="compare-cta cta-new">Open the Demo &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bombshell-section">
+  <div class="container">
+    <div class="bombshell-grid">
+      <div>
+        <div class="bombshell-stat-label">The single most expensive bug</div>
+        <div class="bombshell-stat-codeline">mailto:mymail@<br>mailservice.com</div>
+        <div class="bombshell-stat-label" style="margin-top: 28px;">Current value of "Book a service" button</div>
+      </div>
+      <div class="bombshell-content">
+        <h2>Every customer who clicks <em>"Book a service"</em><br>is sending email into a black hole.</h2>
+        <p>That is the verbatim destination of your most prominent conversion button on garotplumbing.com today. <strong>mymail@mailservice.com</strong> is a placeholder that never reaches you. The customer types their water heater emergency, hits send, hears nothing back, assumes Garot is unresponsive, calls Lindquist or Beno instead.</p>
+        <p>Conservative estimate at 10 button clicks per month and a $650 average ticket: <strong>~$6,500/month, ~$78,000/year in lost work.</strong> For a single broken hyperlink. Time to fix: 5 minutes. We do it on day one of the engagement, before any other work begins.</p>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.55); font-style: italic;">This is the kind of bug that does not appear in any analytics dashboard. Form submissions silently fail. Calls do not arrive. The business assumes "this season is slower." It is not slower. The button is broken.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">You are <em>older</em> than four of the five<br>top-ranked plumbers in Green Bay.</h2>
+    <p class="section-sub">Heritage is the strongest trust signal in the Wisconsin trades. Garot is sitting on the second-oldest plumbing pedigree in Brown County and Google has no idea, because the founding year is contradicted in three places on your own site and not embedded in schema anywhere.</p>
+
+    <div class="heritage-grid">
+      <div class="heritage-card">
+        <div class="year">1926</div>
+        <div class="name">Beno Plumbing</div>
+        <div class="rank">Top-ranked</div>
+      </div>
+      <div class="heritage-card you">
+        <div class="year">1946</div>
+        <div class="name">Garot Plumbing</div>
+        <div class="rank">Not in top 10</div>
+      </div>
+      <div class="heritage-card">
+        <div class="year">1967</div>
+        <div class="name">R.J. Parins</div>
+        <div class="rank">Ranked</div>
+      </div>
+      <div class="heritage-card">
+        <div class="year">1976</div>
+        <div class="name">Vern Kummers</div>
+        <div class="rank">Ranked</div>
+      </div>
+      <div class="heritage-card">
+        <div class="year">2003</div>
+        <div class="name">Lindquist</div>
+        <div class="rank">Ranked</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">The <em>60-day</em> plan.</h2>
+    <p class="section-sub">Three phases. The most expensive single bug fixes inside 24 hours. The structural rebuild lands by day 42. By day 60, Garot is in the Green Bay map pack and the calls catching up with the brand.</p>
+
+    <div class="plan-grid">
+      <div class="plan-card">
+        <span class="plan-num">&mdash; Phase 01</span>
+        <h4>Stop the bleed</h4>
+        <p>Day 1: fix the broken CTA. Day 2-14: deploy full Plumber + LocalBusiness + FAQ + AggregateRating schema. Standardize "since 1946" across every page surface. Google Business Profile rebuild and submission.</p>
+        <span class="plan-week">Days 1&ndash;14</span>
+      </div>
+      <div class="plan-card">
+        <span class="plan-num">&mdash; Phase 02</span>
+        <h4>Structural rebuild</h4>
+        <p>Service-deep landing pages for water heater (already ranking #1, defend it), drain cleaning, boiler, sump pump, HVAC. Three AI-Overview-targeted articles. Wisconsin trade citation campaign across BBB, Angi, Expertise.com, HomeAdvisor.</p>
+        <span class="plan-week">Days 15&ndash;42</span>
+      </div>
+      <div class="plan-card">
+        <span class="plan-num">&mdash; Phase 03</span>
+        <h4>Compound &amp; convert</h4>
+        <p>Review-velocity automation post-job (target 12+ new Google reviews/month). Monthly content cadence. Conversion-tracking dashboard. Performance review and decision on Phase 4 (paid local services ads or pure organic continuation).</p>
+        <span class="plan-week">Days 43&ndash;60</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">The <em>scorecard.</em></h2>
+    <p class="section-sub">Every signal Google's local map pack and the Wisconsin trade citation oligopoly check, the current garotplumbing.com graded against the 60-day rebuild.</p>
+
+    <div class="scorecard">
+      <div class="scorecard-header">
+        <div>Signal</div>
+        <div>Today</div>
+        <div>After rebuild</div>
+      </div>
+      <div class="scorecard-row"><div class="scorecard-label">Primary "Book a service" CTA functional</div><div class="scorecard-cell current">&times; Broken</div><div class="scorecard-cell new">&check; Fixed Day 1</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">Founding-year consistency (schema-readable)</div><div class="scorecard-cell current">&times; 3 versions</div><div class="scorecard-cell new">&check; "Since 1946" everywhere</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">Plumber + LocalBusiness schema</div><div class="scorecard-cell current">Partial</div><div class="scorecard-cell new">&check; Full</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">FAQPage schema (AI Overview lift)</div><div class="scorecard-cell current">&times; None</div><div class="scorecard-cell new">&check; 8+ Q&amp;As</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">AggregateRating schema (review stars in SERP)</div><div class="scorecard-cell current">&times; None</div><div class="scorecard-cell new">&check; Live widget</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">Service-deep landing pages</div><div class="scorecard-cell current">~3 thin</div><div class="scorecard-cell new">&check; 8 pages</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">"Open Now" status above the fold</div><div class="scorecard-cell current">&times; Missing</div><div class="scorecard-cell new">&check; Live from GBP</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">"Plumber Green Bay" Google ranking</div><div class="scorecard-cell current">Not top 10</div><div class="scorecard-cell new">Top 5 target</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">Map Pack appearance</div><div class="scorecard-cell current">Inconsistent</div><div class="scorecard-cell new">Top 3 target</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">Citation list inclusions (BBB, Angi, Expertise, etc.)</div><div class="scorecard-cell current">Partial</div><div class="scorecard-cell new">12+ verified</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">Monthly Google reviews collected</div><div class="scorecard-cell current">~2</div><div class="scorecard-cell new">12+</div></div>
+      <div class="scorecard-row"><div class="scorecard-label">Design tier</div><div class="scorecard-cell current">B&minus;</div><div class="scorecard-cell new">A+</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>The Sunday-morning emergency call<br>should be ringing <em>your</em> phone.</h2>
+    <p>Right now, it's ringing newer plumbers with weaker history. Sixty days from now, that changes. Let's talk.</p>
+    <div class="cta-buttons">
+      <a href="mailto:info@andreicopy.net" class="cta-button primary">Book the Strategy Call &rarr;</a>
+      <a href="../" class="cta-button ghost">Open the Demo &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>AG1 Consulting &middot; Andrei Givero &middot; info@andreicopy.net &middot; <a href="https://andrei170.github.io/ag1/">andrei170.github.io/ag1</a></span>
+</footer>
+
+</body>
+</html>
